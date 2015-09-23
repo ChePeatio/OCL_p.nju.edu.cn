@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">P_nju_login</string>
+
+    <string name="text_account">账号：</string>
+    <string name="text_password">密码：</string>
+    <string name="text_store">是否记住账号信息以自动登陆</string>
+    <string name="button_login">登陆</string>
+
+    <string name="hint_account">输入您的账号</string>
+    <string name="hint_password">输入您的密码</string>
+    <string name="hint_response">登陆状态</string>
+
+</resources>
