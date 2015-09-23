@@ -2,8 +2,6 @@ package io.github.chepeatio.p_nju_login.ui;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Message;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
@@ -12,7 +10,6 @@ import android.widget.EditText;
 
 import io.github.chepeatio.p_nju_login.R;
 import io.github.chepeatio.p_nju_login.ui.base.BaseActivity;
-import util.Constant;
 import util.ExecutingLogin;
 
 /**
@@ -28,17 +25,6 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
     private EditText passwordEdit;
     private CheckBox rememberCheck;
     private Button loginButton;
-
-    public static Handler handler = new Handler() {
-
-        public void handleMessage(Message msg) {
-            switch (msg.what) {
-                case Constant.SHOW_RESPONSE:
-                    // handle the response on UI
-                    String response = (String)msg.obj;
-            }
-        }
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

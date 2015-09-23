@@ -38,9 +38,6 @@ public class BaseActivity extends Activity {
 
     /**
      * Activity跳转
-     * @param context
-     * @param targetActivity
-     * @param bundle
      */
     public void redictToActivity(Context context,Class<?> targetActivity,Bundle bundle){
         Intent intent = new Intent(context, targetActivity);

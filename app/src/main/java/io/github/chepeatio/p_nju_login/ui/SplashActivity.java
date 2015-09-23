@@ -1,20 +1,17 @@
 package io.github.chepeatio.p_nju_login.ui;
 
-import android.app.AlertDialog;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
-import android.view.View;
 import android.view.Window;
 
-import io.github.chepeatio.p_nju_login.MyApplication;
 import io.github.chepeatio.p_nju_login.R;
 import io.github.chepeatio.p_nju_login.ui.base.BaseActivity;
+import util.ExecutingLogin;
 
 /**
  * Created by Kedar on 2015/9/23.
@@ -49,6 +46,13 @@ public class SplashActivity extends BaseActivity {
 
         pref = PreferenceManager.getDefaultSharedPreferences(this);
         isRemember = pref.getBoolean("remember_password", false);
+        String account = pref.getString("account", "");
+        String password = pref.getString("password", "");
+        if (isRemember) {
+            Runnable post = new ExecutingLogin(account, password);
+            Thread postThread = new Thread(post);
+            postThread.start();
+        }
         redirectByTime();
     }
 
@@ -61,10 +65,13 @@ public class SplashActivity extends BaseActivity {
             @Override
             public void run() {
                 // TODO Auto-generated method stub
-                if (!isRemember)
-                    redictToActivity(SplashActivity.this, SettingActivity.class, null);
-                else
+                if (isRemember) {
+                    // 本地有账号密码，将跳转到状态页面
                     redictToActivity(SplashActivity.this, StateActivity.class, null);
+                } else {
+                    // 本地没有账号密码，跳转到登陆页面
+                    redictToActivity(SplashActivity.this, SettingActivity.class, null);
+                }
                 finish();
             }
         }, DELAY_TIME);

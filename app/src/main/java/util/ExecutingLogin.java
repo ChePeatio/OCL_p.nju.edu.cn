@@ -11,6 +11,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 import io.github.chepeatio.p_nju_login.ui.SettingActivity;
+import io.github.chepeatio.p_nju_login.ui.StateActivity;
 
 /**
  * Created by Kedar on 2015/9/19.
@@ -56,7 +57,7 @@ public class ExecutingLogin implements Runnable {
             Message message = new Message();
             message.what = Constant.SHOW_RESPONSE;
             message.obj = sb.toString();
-            SettingActivity.handler.sendMessage(message);
+            StateActivity.handler.sendMessage(message);
 
         } catch (Exception ex) {
             Log.e("executingLogin", ex.toString());

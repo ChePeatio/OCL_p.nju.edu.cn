@@ -40,7 +40,7 @@ public class ActivityManagerUtils {
                 if(!ac.isFinishing()){
                     ac.finish();
                 }
-                ac = null;
+                //ac = null;
             }
         }
         activityList.clear();
