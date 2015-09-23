@@ -10,11 +10,12 @@ import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import io.github.chepeatio.p_nju_login.MainActivity;
+import io.github.chepeatio.p_nju_login.ui.SettingActivity;
 
 /**
  * Created by Kedar on 2015/9/19.
- * Edited by Kedar on 2015/9/20.
+ *
+ * TODO 独立线程负责向服务器POST用户的账号密码
  */
 public class ExecutingLogin implements Runnable {
 
@@ -55,7 +56,7 @@ public class ExecutingLogin implements Runnable {
             Message message = new Message();
             message.what = Constant.SHOW_RESPONSE;
             message.obj = sb.toString();
-            MainActivity.handler.sendMessage(message);
+            SettingActivity.handler.sendMessage(message);
 
         } catch (Exception ex) {
             Log.e("executingLogin", ex.toString());

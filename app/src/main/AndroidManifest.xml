@@ -2,18 +2,29 @@
     package="io.github.chepeatio.p_nju_login">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
 
-    <application android:allowBackup="true" android:label="@string/app_name"
+    <application android:name=".MyApplication"
+        android:allowBackup="true" android:label="@string/app_name"
         android:icon="@mipmap/ic_launcher" android:theme="@style/AppTheme">
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name" >
+
+        <activity android:name=".ui.SplashActivity"
+            android:label="@string/app_splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+
+        <activity
+            android:name=".ui.SettingActivity"
+            android:label="@string/app_name" >
+        </activity>
+
     </application>
 
 </manifest>
