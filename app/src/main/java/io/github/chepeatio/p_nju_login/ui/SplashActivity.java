@@ -22,7 +22,6 @@ import util.ExecutingLogin;
 public class SplashActivity extends BaseActivity {
 
     private static final long DELAY_TIME = 2000L;
-    private SharedPreferences pref;
     private boolean isRemember;
 
     @Override
@@ -44,7 +43,7 @@ public class SplashActivity extends BaseActivity {
             });
         }*/
 
-        pref = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
         isRemember = pref.getBoolean("remember_password", false);
         String account = pref.getString("account", "");
         String password = pref.getString("password", "");

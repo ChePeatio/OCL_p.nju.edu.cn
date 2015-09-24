@@ -33,6 +33,7 @@ public class StateActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_state);
+
         state = (TextView)findViewById(R.id.state);
     }
 }

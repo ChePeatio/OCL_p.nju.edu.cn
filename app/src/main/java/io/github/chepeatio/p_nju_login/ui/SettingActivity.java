@@ -61,6 +61,8 @@ public class SettingActivity extends BaseActivity implements View.OnClickListene
             Runnable post = new ExecutingLogin(account, password);
             Thread postThread = new Thread(post);
             postThread.start();
+
+            redictToActivity(SettingActivity.this, StateActivity.class, null);
         }
     }
 }
